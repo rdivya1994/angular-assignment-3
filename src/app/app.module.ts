@@ -11,7 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import{FormsModule} from '@angular/forms';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatListModule} from '@angular/material/list';
 import { DomainListComponent } from './domain-list/domain-list.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -32,7 +32,8 @@ import { ProfileComponent } from './profile/profile.component';
   MatIconModule,
   MatSidenavModule,
   BrowserAnimationsModule,
-  FormsModule,MatListModule
+  FormsModule,MatListModule,
+  MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
