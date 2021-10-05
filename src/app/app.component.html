@@ -1,0 +1,49 @@
+<mat-toolbar color="primary" class="example-toolbar">
+	<button mat-icon-button (click)="isExpanded = !isExpanded"><mat-icon>menu</mat-icon></button>
+	<h1 class="example-app-name"></h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container" autosize>
+	<mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+		
+		<mat-nav-list>
+			<br><br><br>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<app-profile class="full-width" *ngIf="isExpanded || isShowing"></app-profile>
+			</mat-list-item>
+<br><br><br><br>   <mat-divider></mat-divider>
+			<mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+				<span class="full-width" *ngIf="isExpanded || isShowing">Dashboard</span>
+				<mat-icon mat-list-icon *ngIf="isExpanded || isShowing">dashboard</mat-icon>
+				
+			</mat-list-item>
+			
+      <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+		<mat-icon mat-list-icon *ngIf="isExpanded || isShowing">tab</mat-icon>
+				<span class="full-width"  *ngIf="isExpanded || isShowing" >
+					
+					<a href="/domain-list" (mouseenter)="mouseenter()" (mouseleave)="mouseleave()">
+						Site Details
+						</a></span>
+			
+
+				
+				
+			</mat-list-item>
+      <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+		<mat-icon mat-list-icon *ngIf="isExpanded || isShowing">tab</mat-icon>
+				<span class="full-width"  *ngIf="isExpanded || isShowing">Migrations</span>
+				
+				
+			</mat-list-item>
+		
+		</mat-nav-list>
+   
+	</mat-sidenav>
+
+	<div class="example-sidenav-content">
+		<router-outlet></router-outlet>
+    
+	
+	
+</div>
+</mat-sidenav-container>

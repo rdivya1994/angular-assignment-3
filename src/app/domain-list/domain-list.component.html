@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  
+<div class="container">
+  <h1>Site Details</h1>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Domain name</th>
+        <th>Storage</th>
+        <th>Monthly visitor</th>
+        <th>Domains</th>
+        <th>Domain tag</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let domain of domains">
+        <td>{{domain.domain}}
+        <tr *ngFor="let sub of domain.subdomain">
+         <td>{{sub.name}}</td> 
+</tr></td>
+        <td>{{domain.usedStorage}}/{{domain.storage}}
+            <tr *ngFor="let sub of domain.subdomain">
+                <td>{{sub.usedStorage}}</td>
+       </tr></td>
+        
+        <td>{{domain.montlyVisitor}}/{{domain.monthlyVisitorCapacity}}
+            <tr *ngFor="let sub of domain.subdomain">
+                <td>{{sub.montlyVisitor}}</td>
+       </tr></td>
+        
+       <td>{{domain.usedDomains}}/{{domain.availableDomains}}
+        </td>
+        
+        <td>{{domain.domainTag}}
+            <tr *ngFor="let sub of domain.subdomain">
+                <td>{{sub.domainTag}}</td>
+       </tr></td>
+       <td>{{domain.status}}
+        <tr *ngFor="let sub of domain.subdomain">
+            <td>{{sub.status}}</td>
+   </tr></td>
+      </tr>
+      </tbody>
+      
+        
+    
+  </table>
+</div>
+
+</body>
+</html>
